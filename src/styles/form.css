@@ -1,0 +1,375 @@
+.form-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(113, 69, 157, 1) 0%, rgba(107, 64, 150, 255) 15%, rgba(91, 50, 133, 255) 50%, rgba(56, 19, 94, 255) 80%, rgba(56, 19, 94, 1) 100%);
+    overflow: hidden !important;
+    margin-bottom: -20px;
+    position: relative;
+}
+
+.form {
+    width: 900px;
+    max-width: 95%;
+    /* background: rgba(255, 255, 255, 0.06); translucent */
+    /* backdrop-filter: blur(6px); */
+    padding: 28px;
+    border-radius: 12px;
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); */
+    position: relative;
+    z-index: 20;
+    color: #fff;
+}
+
+.form form {
+    display: block;
+    margin-top: 20px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.form-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    letter-spacing: 0.3px;
+    font-family: "Inter", sans-serif;
+
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    display: block;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #eee;
+    font-family: "Inter", sans-serif;
+}
+
+.form-group p {
+    color: #eeeeee6b;
+    font-family: "Inter", sans-serif;
+    font-style: italic;
+    margin: 10px 12px;
+}
+
+
+.form-group>div {
+    display: flex;
+    gap: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1.6px solid rgba(255, 255, 255, 0.815);
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    outline: none;
+}
+
+.form-group input[type="text"]:hover,
+.form-group input[type="email"]:hover,
+.form-group input[type="number"]:hover,
+.form-group input[type="date"]:hover,
+.form-group input[type="password"]:hover,
+.form-group textarea:hover,
+.fee div:hover {
+    border-color: rgb(217, 17, 144);
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder {
+    font-family: "Inter", sans-serif;
+    color: #ffffff8c;
+    font-size: 1rem;
+}
+
+.checkbox-cont {
+    display: flex;
+    border: 1px solid #fff;
+    width: 50%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.checkbox-cont:hover {
+    border-color: rgb(217, 17, 144);
+}
+
+.checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    background: transparent;
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background 180ms ease, border-color 180ms ease, transform 80ms ease;
+    margin: 0;
+}
+
+.checkbox:checked {
+    border-color: transparent;
+    background: rgb(217, 17, 144);
+}
+
+
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    transform: translateY(3px);
+}
+
+#sigPad {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.fee {
+    display: flex;
+    flex-direction: column;
+}
+
+.fee div {
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1.6px solid rgba(255, 255, 255, 0.815);
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    outline: none;
+    display: flex;
+}
+
+.fee div label,
+.checkbox-cont label {
+    padding: 2px;
+}
+
+.form-group span {
+    color: rgb(217, 17, 144);
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+input[type="date"]:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 4px rgba(107, 64, 150, 0.15);
+}
+
+input[type="date"]::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(1.2);
+    cursor: pointer;
+}
+
+input[type="date"]::-moz-calendar-picker-indicator {
+    filter: invert(1) brightness(1.2);
+    cursor: pointer;
+}
+
+input[type="date"]::before {
+    content: attr(placeholder);
+    text-transform: uppercase;
+}
+
+.signature-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: max-content;
+}
+
+.signature-wrapper label {
+    font-weight: 600;
+    color: #eee;
+    font-family: "Inter", sans-serif;
+}
+
+.signature-wrapper label span {
+    color: rgb(217, 17, 144);
+}
+
+.signature-canvas {
+    width: 850px;
+    height: 200px;
+    /* border: 2px solid #222; */
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    touch-action: none;
+    cursor: crosshair;
+}
+
+.clear-btn {
+    width: 120px;
+    padding: 8px 12px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.clear-btn:hover {
+    background-color: #e33434;
+}
+
+.submit-cont{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit-btn{
+    width: 180px;
+    padding: 20px 16px;
+    background-color: #e01090;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+}
+
+.submit-btn:hover{
+    opacity: 0.7;
+}
+
+@media (min-width: 1201px) {
+    .form {
+        width: 900px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .form {
+        width: 700px !important;
+        padding: 22px;
+    }
+
+    .form-group>div {
+        gap: 8px;
+    }
+
+    .signature-canvas {
+        width: 535px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .form {
+        width: 90% !important;
+        padding: 18px;
+    }
+
+    .form-group>div {
+        flex-direction: row;
+    }
+
+    .raduis1,
+    .raduis2,
+    .raduis3,
+    .raduis4 {
+        opacity: 0.85;
+        transform: scale(0.95);
+    }
+
+    .fee {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .fee div {
+        width: 100%;
+        height: 50px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: 1.6px solid rgba(255, 255, 255, 0.815);
+        background: rgba(255, 255, 255, 0.03);
+        color: #fff;
+        outline: none;
+        display: flex;
+    }
+
+    .signature-canvas {
+        width: 400px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        width: 95% !important;
+        padding: 14px;
+    }
+
+    .form-header h2 {
+        font-size: 1rem;
+    }
+
+    .text-cont h2 {
+        font-size: 1rem;
+    }
+
+    .raduis1,
+    .raduis2,
+    .raduis3,
+    .raduis4 {
+        display: none;
+    }
+}
