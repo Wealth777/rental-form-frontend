@@ -13,7 +13,6 @@ export default function WelcomePage() {
                 <div className='text-cont'>
                     <h2>
                         Welcome!!! My House Property Application Form No Bank Info
-                        {/* <small>pyni@mailinator.com</small> */}
                     </h2>
                     <Link to={'/propertyform'}>
                         <button>
