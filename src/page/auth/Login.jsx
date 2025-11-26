@@ -21,7 +21,7 @@ export default function Login() {
         }),
         onSubmit: async (values) =>{
             try{
-                const res = await axios.post('http://localhost:6778/api/admin/login', values, {
+                const res = await axios.post('https://rental-form-backend-zap2.onrender.com/api/admin/login', values, {
                     headers: { "Content-Type": "application/json" },
                 })
 

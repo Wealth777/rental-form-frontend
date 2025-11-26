@@ -27,10 +27,10 @@ export default function Register() {
         }),
         onSubmit: async (values) =>{
             try{
-                await axios.post('http://localhost:6778/api/admin/reg', values)
+                await axios.post('https://rental-form-backend-zap2.onrender.com/api/admin/reg', values)
                 navigate('/admin/login')
             }catch(err){
-                console.log(err.message)
+                alert(err.message)
             }
         }
     })

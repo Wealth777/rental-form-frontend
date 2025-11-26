@@ -92,14 +92,12 @@ export default function Form() {
         }),
         onSubmit:  async (values) => {
             try{
-                await axios.post("http://localhost:6778/api/users/form", values)
+                await axios.post("https://rental-form-backend-zap2.onrender.com/api/users/form", values)
                 // alert('Form submitted successfully!')
                 navigate('/success')
             }catch(err){
-                console.log(err.message)
+                alert(err.message)
             }
-
-            // console.log(values)
         }
     })
 

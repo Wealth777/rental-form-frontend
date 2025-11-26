@@ -11,7 +11,7 @@ const token = localStorage.getItem('token')
 
 const handleLogout = async () => {
   try {
-    await axios.post('http://localhost:6778/api/admin/logout', {
+    await axios.post('https://rental-form-backend-zap2.onrender.com/api/admin/logout', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -20,13 +20,13 @@ const handleLogout = async () => {
     navigate('/admin/login')
   }
   catch (err) {
-    console.log(err.message)
+    alert(err.message)
   }
 }
 
 const fetchInfo = async () => {
   try {
-    const res = await axios.get('http://localhost:6778/api/users/form', {
+    const res = await axios.get('https://rental-form-backend-zap2.onrender.com/api/users/form', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -34,7 +34,7 @@ const fetchInfo = async () => {
     
     setFormData(res.data?.data || [])
   } catch (err) {
-    console.log(err.message)
+    alert(err.message)
   }
 }
 
