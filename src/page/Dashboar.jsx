@@ -5,8 +5,6 @@ import axios from 'axios'
 
 export default function Dashboar() {
 const navigate = useNavigate()
-const [userName] = useState('')
-const [userImage] = useState('')
 const [formData, setFormData] = useState([])
 
 const token = localStorage.getItem('token')
