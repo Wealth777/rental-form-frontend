@@ -41,8 +41,14 @@ const fetchInfo = async () => {
 }
 
 useEffect(() => {
+  if (!token) {
+    navigate('/admin/login')
+    return
+  }
+
   fetchInfo()
 }, [])
+
 
 
   return (
@@ -53,15 +59,6 @@ useEffect(() => {
         </div>
 
         <div className="navbar-content">
-          <div className="navbar-user">
-            <img
-              src={userImage}
-              alt={userName}
-              className="user-avatar"
-            />
-            <span className="user-name">{userName}</span>
-          </div>
-
           <button
             className="logout-btn"
             onClick={handleLogout}
@@ -74,79 +71,58 @@ useEffect(() => {
             </svg>
           </button>
         </div>
+
       </nav>
 
       {/* Main Content Area */}
       <div className="dashboard-content">
-        <h1>Welcome Back, {userName}!</h1>
+        <h1>Welcome Back !</h1>
         <p>Manage your application from here.</p>
 
-        <div className="content-grid">
-          <table>
-            <thead>
-              <tr>
-                <th>S/N</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Address</th>
-                <th>State and City</th>
-                <th>Marital Status</th>
-                <th>DOB</th>
-                <th>Car</th>
-                <th>Occupation</th>
-                <th>Document</th>
-                <th>Staying Date</th>
-                <th>Pet</th>
-                <th>Lease Duration</th>
-                <th>Moving In Date</th>
-                <th>Pay Rent</th>
-                <th>Application fee</th>
-                <th>Secure House</th>
-                <th>Eviction</th>
-                <th>Rental Preview</th>
-                <th>Signature</th>
-              </tr>
-            </thead>
 
-            <tbody>
-              {Array.isArray(formData) && formData.length > 0 ? (
-                formData.map((item, i) => (
-                  <tr key={item._id || i}>
-                    <td data-label='S/N'>{i + 1}</td>
-                    <td data-label='Full Name'>{item.firstName} {item.lastName}</td>
-                    <td data-label='Email'>{item.email}</td>
-                    <td data-label='Phone No'>{item.phoneNumber}</td>
-                    <td data-label='Address'>{item.address}</td>
-                    <td data-label='State & City'>{item.stateAndCity}</td>
-                    <td data-label='Marital Statu'>{item.MarreitalStatus}</td>
-                    <td data-label='DOB'>{item.dateOfBirth}</td>
-                    <td data-label='Car'>{item.ownCar}</td>
-                    <td data-label='Occupation'>{item.occupation}</td>
-                    <td data-label='Document'>{item.wantDocument}</td>
-                    <td data-label='Staying Date'>{item.startStayingDate}</td>
-                    <td data-label='Pet'>{item.pet}</td>
-                    <td data-label='Lease Duration'>{item.leaseDuration}</td>
-                    <td data-label='Moving In Date'>{item.movingInDate}</td>
-                    <td data-label='Pay Rent'>{item.payingForRent}</td>
-                    <td data-label='Application fee'>{item.applicationFee}</td>
-                    <td data-label='Secure House'>{item.secureHouse}</td>
-                    <td data-label='Eviction'>{item.eviction}</td>
-                    <td data-label='Rental Preview'>{item.rentalProperty}</td>
-                    <td data-label='Signature'>{item.signature}</td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan={21} style={{ textAlign: 'center', padding: '20px' }}>
-                    No application data available.
-                  </td>
-                </tr>
-              )}
-            </tbody>
 
-          </table>
+        <div className="card-list">
+  {Array.isArray(formData) && formData.length > 0 ? (
+    formData.map((item, i) => (
+      <div className="info-card" key={item._id || i}>
+        <div className="card-header">
+          <h3>{item.firstName} {item.lastName}</h3>
+          <span className="sn-tag">{i + 1}</span>
         </div>
+
+        <div className="card-group">
+          <p><strong>Email:</strong> {item.email}</p>
+          <p><strong>Phone:</strong> {item.phoneNumber}</p>
+          <p><strong>Address:</strong> {item.address}</p>
+          <p><strong>State and City:</strong> {item.stateAndCity}</p>
+          <p><strong>Marital Status:</strong> {item.MarreitalStatus}</p>
+          <p><strong>DOB:</strong> {item.dateOfBirth}</p>
+        </div>
+
+        <div className="card-group">
+          <p><strong>Car:</strong> {item.ownCar}</p>
+          <p><strong>Occupation:</strong> {item.occupation}</p>
+          <p><strong>Document:</strong> {item.wantDocument}</p>
+          <p><strong>Staying Date:</strong> {item.startStayingDate}</p>
+          <p><strong>Pet:</strong> {item.pet}</p>
+          <p><strong>Lease Duration:</strong> {item.leaseDuration}</p>
+          <p><strong>Moving In Date:</strong> {item.movingInDate}</p>
+        </div>
+
+        <div className="card-group">
+          <p><strong>Pay Rent:</strong> {item.payingForRent}</p>
+          <p><strong>Application Fee:</strong> {item.applicationFee}</p>
+          <p><strong>Secure House:</strong> {item.secureHouse}</p>
+          <p><strong>Eviction:</strong> {item.eviction}</p>
+          <p><strong>Rental Preview:</strong> {item.rentalProperty}</p>
+        </div>
+      </div>
+    ))
+  ) : (
+    <div className="no-data">No application data available.</div>
+  )}
+</div>
+
       </div>
     </div>
   )
