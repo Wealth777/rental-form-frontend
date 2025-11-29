@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useFormik } from 'formik'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
 export default function Login() {
@@ -69,6 +69,10 @@ export default function Login() {
 
                             <div className="submit-cont">
                                 <button type="button" className="submit-btn" onClick={formik.handleSubmit}>Login</button>
+                            </div>
+
+                            <div style={{ textAlign: 'center', marginTop: '30px'}}>
+                                <p>You don't have an account before? <Link style={{color: 'white', fontFamily: '"Inter", sans-serif'}} to={'/admin/reg'}>Register</Link></p>
                             </div>
                         </div>
                     </form>
